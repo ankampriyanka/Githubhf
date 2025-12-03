@@ -21,9 +21,10 @@ jobs:
         run: |
           git clone https://__token__:${{ secrets.HF_TOKEN }}@huggingface.co/${{ secrets.HF_SPACE }} hf_repo
 
-      - name: Copy project files
+      - name: Copy project files (excluding hf_repo)
         run: |
-          cp -r * hf_repo/
+          shopt -s extglob
+          cp -r !(hf_repo) hf_repo/
 
       - name: Commit and push to Hugging Face
         run: |
@@ -31,4 +32,3 @@ jobs:
           git add .
           git commit -m "Auto deploy from GitHub" || echo "No changes to commit"
           git push
-
