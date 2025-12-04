@@ -1,11 +1,9 @@
 ---
-title: YourSpaceName
-emoji: 🚀
+title: FastAPI Demo
+emoji: ⚡
 colorFrom: blue
-colorTo: pink
-sdk: streamlit
-sdk_version: "1.35.0"
-app_file: app.py
+colorTo: green
+sdk: docker
 pinned: false
 ---
 
